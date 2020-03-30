@@ -2,7 +2,7 @@ package translator;
 
 import java.util.Scanner;
 
-public class translate {
+public class Translate {
 
 	public static void main(String[] args) {
 
