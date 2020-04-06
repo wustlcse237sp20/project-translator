@@ -14,7 +14,12 @@ Stories completed:
 **2. Translating user input as a string through command prompt**
   - Wrote test case for one scenario
   - Attempt call to Google Translate API
+
+**3. Main method control flow**
+  - InputTranslate logic is added
+  - Set up some useful methods to check the validity of input and serialization. However, detailed implementations are not done yet. 
   
 **TODO Next iteration:**
 1. Generate auto detection of language input instead of manually selecting language being translated from. 
 2. Reconfigure environment variables to keep API key more safe.
+3. Complete main method to cover all translate cases. 
