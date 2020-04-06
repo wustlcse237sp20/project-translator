@@ -25,3 +25,9 @@ Stories completed:
 1. Generate auto detection of language input instead of manually selecting language being translated from. 
 2. Reconfigure environment variables to keep API key more safe.
 3. Complete main method to cover all translate cases. 
+
+Usage for Iteration 1: 
+1. Please clone project, open and run Translator.java
+2. Select 1 in command prompt
+3. Give directed inputs
+4. Thank you for using
