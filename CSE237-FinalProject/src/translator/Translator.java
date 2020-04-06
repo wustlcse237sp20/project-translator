@@ -88,7 +88,7 @@ public class Translator {
 			String srcLanguage = serializedInput.get(0);
 			String destLanguage = serializedInput.get(1);
 			String targetTexts = serializedInput.get(2);
-			System.out.println(inputTranslate.translateInput(srcLanguage, destLanguage, targetTexts));
+			System.out.println(inputTranslate.translateInput(targetTexts, srcLanguage, destLanguage));
 		} else {
 			// If no valid input is provided, then simply terminate the program or ask the user again. 
 		}
