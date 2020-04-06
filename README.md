@@ -3,6 +3,7 @@
 ## Iteration 1
 
 Stories completed:
+
 **1. Set up Google Cloud Development Account to utilize Google Cloud Translate API & Services**
   - Enabled Cloud Translation API and setting up Service Account to get private key as JSON 
   - Imported Google Cloud Client Libraries from Eclipse Marketplace
