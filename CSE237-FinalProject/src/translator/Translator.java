@@ -1,12 +1,13 @@
 package translator;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Translator {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		System.out.println("Welcome to Translator!\n\nHow would you like to translate? Please select from the following:");
 		System.out.println("1. Manually input statement");
@@ -74,7 +75,7 @@ public class Translator {
 		return res;
 	}
 
-	public static void inputTranslation() {
+	public static void inputTranslation() throws IOException {
 		InputTranslate inputTranslate = new InputTranslate();
 		System.out.println("Please type {Source language}, {Destination language}, {Texts of the source language}");
 		System.out.println("I.E. {English} {Spanish} {Quarantine sucks.}");
