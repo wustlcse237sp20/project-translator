@@ -1,4 +1,6 @@
-# cse237-project
+# Translator
+
+Translator is a translation app utilizing the Google Cloud Tranlation API. You can translate either by direct input, file input, or image input. Please select the language you want to translate to and we'll do the work!
 
 ## Iteration 1
 
