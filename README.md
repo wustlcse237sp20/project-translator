@@ -34,6 +34,7 @@ Stories completed:
   - Set up some useful methods to check the validity of input and serialization. However, detailed implementations are not done yet. 
 
 **4. Current Difficulties**
+  - We are currently experiencing issues between the adding of Google Cloud Platform tools into the library from Eclipse's Google Cloud Platform App and git. Errors regarding GCP access is due to such errors. 
   - The Tesseract Library (Open Source) lacks precision and may not be powerful enough to use for our application. Currently looking into alternatives in the Google Cloud Platform's OCR API.
 
 **TODO Next iteration:**
