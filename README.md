@@ -32,7 +32,11 @@ Stories completed:
 4. Improve quality and accuracy of OCR.
 
 **Usage for Iteration 1:**
-1. Please clone project, open and run Translator.java
-2. Select 1 in command prompt
-3. Give directed inputs
-4. Thank you for using
+1. Please clone project, and go to the eclipse marketplace and search "google cloud tools" and install it.
+2. After installing, right click on the project folder->build path->add libraries.
+3. click on google cloud libraries, hit next
+4. check box cloud translation and hit finish
+5. open and run Translator.java
+6. Type 1 in command prompt (1 = Commandline input translate)
+7. Give directed inputs (Caution: for now, we don't translate the inputs since our implementation is not complete yet). 
+8. Thank you for using
