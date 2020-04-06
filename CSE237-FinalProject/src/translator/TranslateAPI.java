@@ -6,7 +6,7 @@ import com.google.cloud.translate.*;
 public class TranslateAPI {
 	public static String Translate(String input, String inLanguage, String outLanguage) throws IOException {
 		
-		// limited to $20/1M characters for $300 balance free trial, please translate with reasonable size
+		// limited to $20/1M characters for $300 balance free trial, please translate with reasonable siz
 		System.setProperty("GOOGLE_API_KEY", "AIzaSyAi3rM_vZBOaLSwXPU6PGyJA3O-geVqWdA");
 		
 		Translate translate = TranslateOptions.getDefaultInstance().getService();
