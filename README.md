@@ -10,6 +10,7 @@ Stories completed:
   - Enabled Cloud Translation API and setting up Service Account to get private key as JSON 
   - Imported Google Cloud Client Libraries from Eclipse Marketplace
   - Set up environment variables
+  - OCR setup using Tesseract4J library completed.
   
   **Note:** *Currently, the API is being called through a Google API key that is currently publicly accessible, which is something that needs to be fixed in future iterations. Ideally, the API should be configured to detect the private key JSON stored locally upon setup so the Google API key itself is not exposed. Following the guidelines at https://cloud.google.com/docs/authentication/production caused the program to not compile. We will investigate more into this.*
   
@@ -25,6 +26,7 @@ Stories completed:
 1. Generate auto detection of language input instead of manually selecting language being translated from. 
 2. Reconfigure environment variables to keep API key more safe.
 3. Complete main method to cover all translate cases. 
+4. Improve quality and accuracy of OCR.
 
 **Usage for Iteration 1:**
 1. Please clone project, open and run Translator.java
