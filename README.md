@@ -21,7 +21,10 @@ Stories completed:
 **3. Main method control flow**
   - InputTranslate logic is added
   - Set up some useful methods to check the validity of input and serialization. However, detailed implementations are not done yet. 
-  
+
+**4. Current Difficulties**
+  - The Tesseract Library (Open Source) lacks precision and may not be powerful enough to use for our application. Currently looking into alternatives in the Google Cloud Platform's OCR API.
+
 **TODO Next iteration:**
 1. Generate auto detection of language input instead of manually selecting language being translated from. 
 2. Reconfigure environment variables to keep API key more safe.
