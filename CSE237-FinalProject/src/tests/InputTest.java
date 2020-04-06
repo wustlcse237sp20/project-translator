@@ -25,6 +25,5 @@ class InputTest {
 		// assert result :assertEquals(a, b)
 		assertEquals(translate.translateInput("Hello world", "en", "es"), "hola mundo");
 		assertEquals(translate.translateInput("Hello world", "en", "fr"), "bonjour le monde");
-		assertEquals(translate.translateInput("Hello world", "en", "zh-CN"), "你好，世界");
 	}
 }
