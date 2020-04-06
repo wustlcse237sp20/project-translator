@@ -26,7 +26,7 @@ Stories completed:
 2. Reconfigure environment variables to keep API key more safe.
 3. Complete main method to cover all translate cases. 
 
-Usage for Iteration 1: 
+**Usage for Iteration 1:**
 1. Please clone project, open and run Translator.java
 2. Select 1 in command prompt
 3. Give directed inputs
