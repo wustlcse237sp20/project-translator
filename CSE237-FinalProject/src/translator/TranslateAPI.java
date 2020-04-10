@@ -1,6 +1,6 @@
 package translator;
 import java.io.IOException;
-
+ 
 import com.google.cloud.translate.*;
 
 public class TranslateAPI {
