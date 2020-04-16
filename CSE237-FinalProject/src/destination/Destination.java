@@ -28,6 +28,25 @@ public class Destination {
 		return this.landMarks;
 	}
 	
+	public void addPeer(User user) {
+		this.travelPeers.add(user);
+	}
+	
+	public void removePeer(User user) {
+		this.travelPeers.remove(user);
+	}
+	
+	public int getTotalNumberOfPeers() {
+		return travelPeers.size();
+	}
+	
+	public void seeAllPeers() {
+		for(User user : travelPeers) {
+			System.out.println(user.getUser());
+		}
+	}
+	
+	
 	public void addLandmark(User user, String name) {
 		landMarks.get(user).add(new Landmark(name));
 	}
