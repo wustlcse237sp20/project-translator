@@ -20,8 +20,8 @@ class DestinationTest {
 
 	@Test
 	void testDestinationLists() {
-		User karen = new User("Karen", "Ye");
-		User ruby = new User("Ruby", "Rain");
+		User karen = new User("Karen", "Ye", "St. Louis", "USA");
+		User ruby = new User("Ruby", "Rain", "Paris", "France");
 		
 		destination.addPeer(karen);
 		destination.addPeer(ruby);
@@ -32,11 +32,11 @@ class DestinationTest {
 		Landmark l4 = new Landmark("Roppongi");
 		Landmark l5 = new Landmark("Harajuku");
 		
-		destination.addLandmark(karen, l1.getName());
-		destination.addLandmark(karen, l2.getName());
-		destination.addLandmark(karen, l3.getName());
-		destination.addLandmark(ruby, l4.getName());
-		destination.addLandmark(ruby, l5.getName());
+		destination.addLandmark(karen, l1);
+		destination.addLandmark(karen, l2);
+		destination.addLandmark(karen, l3);
+		destination.addLandmark(ruby, l4);
+		destination.addLandmark(ruby, l5);
 		
 		assertEquals(2, destination.getTotalNumberOfPeers());
 		assertEquals(3, destination.getTotalNumberOfLandmarks(karen));
@@ -47,6 +47,12 @@ class DestinationTest {
 		assertTrue(destination.getLandmarks().get(karen).contains(l3));
 		assertTrue(destination.getLandmarks().get(ruby).contains(l4));
 		assertTrue(destination.getLandmarks().get(ruby).contains(l5));
+		
+		destination.removeLandmark(karen, l3);
+		assertEquals(2, destination.getTotalNumberOfLandmarks(karen));
+		
+		destination.removePeer(karen);
+		assertFalse(destination.getTravelPeers().contains(karen));
+		assertFalse(destination.getLandmarks().containsKey(karen));
 	}
-
 }
