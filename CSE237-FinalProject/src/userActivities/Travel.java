@@ -9,6 +9,7 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 import destination.User;
+import translator.Translator;
 
 import java.io.FileWriter; 
 import java.nio.file.Files;
@@ -191,7 +192,7 @@ public class Travel {
 						if (BCrypt.checkpw(inputPassword, password)) {
 							validPassword = true;
 							System.out.println("Successfully logged in!");
-							dashboard(username);
+							dashboard(mainScanner, username);
 						} else {
 							System.out.println("Incorrect Password");
 						}
@@ -212,8 +213,24 @@ public class Travel {
 	
 	
 	// Main functionalities of our app will all happen here. 	
-	public static void dashboard(String userName) {
+	public static void dashboard(Scanner mainScanner, String userName) throws IOException {
 		System.out.println("Welcome " +userName+"!");
+		System.out.println("What would you like to do today? Please select from the following: ");
+		System.out.println("1. Translate (type '1') ");
+		
+		boolean validChoice = false;
+		
+		while (!validChoice) {
+			String selection = mainScanner.nextLine();
+			
+			if (selection.equals("1")) {
+				validChoice = true;
+				Translator.getTranslatorScreen(mainScanner);
+				dashboard(mainScanner, userName);
+			} else {
+				System.out.println("Sorry, other options are not valid yet. Please try again.");
+			}
+		}
 
 		String pathToFile = "src/credentials/"+userName+".txt";
 		File accountInfoFile = new File(pathToFile);		
