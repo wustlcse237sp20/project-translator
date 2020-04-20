@@ -64,7 +64,7 @@ This is NOT an error on our end. This is just a default message spawned by the T
 
 Stories completed:
 
-**1. Created sign up and log in interfaces =**
+**1. Created sign up and log in interfaces**
  - Created front page where users can create their accounts with preferred username and password.
  - Alphanumerics are checked and password is encrypted using BCrypt.
 
