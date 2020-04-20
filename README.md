@@ -50,6 +50,8 @@ Stories completed:
 ***Usage for Iteration 2:***
 * Please note that We decided to extend our topic to create a travel application since a simple translator won't be suitable for this project. Users can now create an account, log in, and use the many wonderful services that we can provide. This will all be touched on in the last iteration, but for now, users can only still use the translator app.
 
+* The travel app is a system where users can keep track of all the places they ever wanted to visit. They can add to a list of destinations they want to visit as well as add landmarks they want to visit for each destination. Each destination also includes a list of all the other users who want to visit this place as well. That way, a user can find a travel peer to go sightseeing with, or make some new friends! When traveling, our translator service will always be available to keep communication strong!
+
 1. Please clone project in your Eclipse. 
 2. In eclipse, please run the main method in Travel.java of userActivities package. 
 3. Interact with the UI in the terminal.
