@@ -59,13 +59,13 @@ Stories completed:
 
 Stories completed:
 
-**1. **
+**1. sth**
 
-**2. **
+**2. sth**
 
-**3. **
+**3. sth**
 
-**4. **
+**4. sth**
 
 
 **TODO Next iteration:**
