@@ -42,3 +42,30 @@ Stories completed:
 2. Reconfigure environment variables to keep API key more safe.
 3. Complete main method to cover all translate cases. 
 4. Improve quality and accuracy of OCR.
+
+
+
+## Iteration 2
+
+***Usage for Iteration 2:***
+* Please note that We decided to change our topic to travel application since a simple translator won't be suitable for this project. 
+
+1. Please clone project in your Eclipse. 
+2. Please ignore everything in translator package. We will utilize it in iteration 3. 
+3. Please run a main method in Travel.java of userActivities package. 
+4. Thank you for using
+
+
+
+Stories completed:
+
+**1. **
+
+**2. **
+
+**3. **
+
+**4. **
+
+
+**TODO Next iteration:**
