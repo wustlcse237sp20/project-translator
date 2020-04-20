@@ -48,27 +48,37 @@ Stories completed:
 ## Iteration 2
 
 ***Usage for Iteration 2:***
-* Please note that We decided to change our topic to travel application since a simple translator won't be suitable for this project. 
+* Please note that We decided to extend our topic to create a travel application since a simple translator won't be suitable for this project. Users can now create an account, log in, and use the many wonderful services that we can provide. This will all be touched on in the last iteration, but for now, users can only still use the translator app.
 
 1. Please clone project in your Eclipse. 
-2. Please ignore everything in translator package. We will utilize it in iteration 3. 
-3. Please run a main method in Travel.java of userActivities package. 
-4. Thank you for using
+2. In eclipse, please run the main method in Travel.java of userActivities package. 
+3. Interact with the UI in the terminal.
+4. Thank you for using!
 
 
 
 Stories completed:
 
-**1. Create sign up, and log in**
+**1. Created sign up and log in interfaces =**
  - Created front page where users can create their accounts with preferred username and password.
  - Alphanumerics are checked and password is encrypted using BCrypt.
 
-**2. sth**
+**2. Created user and location objects**
+ - Users can now create an account for themselves and where they're from
 
-**3. sth**
+**3. Created destination and landmark objects**
+ - Users will soon be able to select their dream destination for travel and landmarks they want to visit there
+ - Users will soon be able to see a list of other travel peers who also wish to visit the same destination
+ 
+**3. Improved Main UI**
+ - Users are now able to interact more smoothly with our app
 
 **4. sth**
 
 
 **TODO Next iteration:**
 1. Users will be able to add and modify their location information in their account.
+2. Users will be able to add a dream destination and landmarks they want to visit.
+3. Users will be able to see list of travel peers going to the same destination.
+4. Users will be able to freely add/remove to their list of dream destinations as well landmarks for each destination.
+5. Information will be persisted across sessions.
