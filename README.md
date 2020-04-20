@@ -69,13 +69,11 @@ Stories completed:
  - Users can now create an account for themselves and where they're from
 
 **3. Created destination and landmark objects**
- - Users will soon be able to select their dream destination for travel and landmarks they want to visit there
- - Users will soon be able to see a list of other travel peers who also wish to visit the same destination
+ - From the UI, users will soon be able to select their dream destination for travel and landmarks they want to visit there
+ - From the UI, users will soon be able to see a list of other travel peers who also wish to visit the same destination
  
 **3. Improved Main UI**
  - Users are now able to interact more smoothly with our app
-
-**4. sth**
 
 
 **TODO Next iteration:**
