@@ -226,6 +226,7 @@ public class Travel {
 			if (selection.equals("1")) {
 				validChoice = true;
 				Translator.getTranslatorScreen(mainScanner);
+				
 				dashboard(mainScanner, userName);
 			} else {
 				System.out.println("Sorry, other options are not valid yet. Please try again.");
