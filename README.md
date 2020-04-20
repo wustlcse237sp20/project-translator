@@ -42,3 +42,33 @@ Stories completed:
 2. Reconfigure environment variables to keep API key more safe.
 3. Complete main method to cover all translate cases. 
 4. Improve quality and accuracy of OCR.
+
+
+
+## Iteration 2
+
+***Usage for Iteration 2:***
+* Please note that We decided to change our topic to travel application since a simple translator won't be suitable for this project. 
+
+1. Please clone project in your Eclipse. 
+2. Please ignore everything in translator package. We will utilize it in iteration 3. 
+3. Please run a main method in Travel.java of userActivities package. 
+4. Thank you for using
+
+
+
+Stories completed:
+
+**1. Create sign up, and log in**
+ - Created front page where users can create their accounts with preferred username and password.
+ - Alphanumerics are checked and password is encrypted using BCrypt.
+
+**2. sth**
+
+**3. sth**
+
+**4. sth**
+
+
+**TODO Next iteration:**
+1. Users will be able to add and modify their location information in their account.
