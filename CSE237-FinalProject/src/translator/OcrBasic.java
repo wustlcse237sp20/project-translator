@@ -1,11 +1,11 @@
 package translator;
 
-import net.sourceforge.tess4j.*; 
-import java.io.File;
+// import net.sourceforge.tess4j.*; 
+// import java.io.File;
 
 
 public class OcrBasic {
-	
+	/*
 	private String filename;
 	private String result;
 	private File file;
@@ -32,6 +32,6 @@ public class OcrBasic {
 		// TODO Auto-generated method stub
 		OcrBasic ocr = new OcrBasic("example1.png");
 		System.out.println(ocr.result);
-	}
+	}*/
 
 }

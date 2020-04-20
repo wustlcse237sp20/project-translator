@@ -1,9 +1,15 @@
 package userActivities;
 
 import java.io.File;
-import java.io.IOException; 
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+
+import destination.User;
+
 import java.io.FileWriter; 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -31,23 +37,24 @@ public class Travel {
 		System.out.println("At anytime, you can type 'main screen' to come back to this screen");
 		
 		boolean validCommand = false;
-		
-			while (!validCommand) {
-				String selection = mainScanner.nextLine();
-				if (selection.equals("sign in")) {
-					validCommand = true;
-					signIn(mainScanner);
 	
-				} else if (selection.equals("sign up")) {
-					validCommand = true;
-					signUp(mainScanner);
-				} else if (selection.equals("quit")) {
-					System.out.println("Application closed");	
-				} else {
-					System.out.println("we did not understand your command");
-					System.out.println("Type 'sign in', 'sign up', or 'quit'");			
-				}
+		while (!validCommand) {
+			String selection = mainScanner.nextLine();
+			if (selection.equals("sign in")) {
+				validCommand = true;
+				signIn(mainScanner);
+
+			} else if (selection.equals("sign up")) {
+				validCommand = true;
+				signUp(mainScanner);
+			} else if (selection.equals("quit")) {
+				System.out.println("Application closed");	
+				return;
+			} else {
+				System.out.println("we did not understand your command");
+				System.out.println("Type 'sign in', 'sign up', or 'quit'");
 			}
+		}
 	}
 	
 	
@@ -55,8 +62,12 @@ public class Travel {
 		
 		boolean validUsername = false;
 		boolean validPassword = false;
+		boolean validCity = false; 
+		boolean validCountry = false; 
 		String newUsername = "";
 		String pathToFile = "";
+		String userCity = "";
+		String userCountry = "";
 		
 		Pattern pattern = Pattern.compile("^[a-zA-Z0-9]+$");
 			
@@ -104,13 +115,44 @@ public class Travel {
 						myWriter.write(hashedPassword+"\n");
 						myWriter.close();
 						validPassword = true;
-						System.out.println("Account created!");
 					} catch (IOException e) {
 						System.out.println("Error occured while creating new ID");
 						e.printStackTrace();
 					}
 				}
 			}
+			while (!validCity) {
+				System.out.println("Type in the city you are from");
+				userCity = mainScanner.nextLine();
+				goBackToMainScreen(userCity, mainScanner);				
+				try {
+					FileWriter myWriter = new FileWriter(pathToFile, true);
+					myWriter.write(userCity+"\n");
+					myWriter.close();
+					validCity = true;
+				} catch (IOException e) {
+					System.out.println("Error occured while typing location information");
+					e.printStackTrace();
+				}				
+			}			
+			while (!validCountry) {
+				System.out.println("Type in the country you are from");
+				userCountry = mainScanner.nextLine();
+				goBackToMainScreen(userCountry, mainScanner);
+				
+				try {
+					FileWriter myWriter = new FileWriter(pathToFile, true);
+					myWriter.write(userCountry+"\n");
+					myWriter.close();
+					validCountry = true;
+					System.out.println("Account created!");					
+				} catch (IOException e) {
+					System.out.println("Error occured while typing location information");
+					e.printStackTrace();
+				}				
+				
+			}			
+			
 		startScreen(mainScanner);
 	}
 	
@@ -168,7 +210,29 @@ public class Travel {
 		}
 	}
 	
-	public static void dashboard(String username) {
-		System.out.println("Welcome " +username+"!");
+	
+	// Main functionalities of our app will all happen here. 	
+	public static void dashboard(String userName) {
+		System.out.println("Welcome " +userName+"!");
+
+		String pathToFile = "src/credentials/"+userName+".txt";
+		File accountInfoFile = new File(pathToFile);		
+		Path filePath = Paths.get(pathToFile);
+		String userCity = "";
+		String userCountry = "";
+		try {
+			Iterator iter = Files.lines(filePath).iterator();
+			iter.next();
+			userCity = iter.next().toString();
+			userCountry = iter.next().toString();
+		} catch (IOException e) {
+			System.out.println("Error occured while checking for password");
+			e.printStackTrace();
+		}	
+		
+		User currUser;
+		if (userCity != null && userCountry != null) {
+			currUser = new User(userName, userCity, userCountry);
+		}
 	}
 }

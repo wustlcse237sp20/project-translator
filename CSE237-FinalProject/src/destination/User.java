@@ -1,16 +1,13 @@
 package destination;
 
 public class User {
-	String firstName;
-	String lastName;
+	String userName;
 	Location userLocation;
-	Destination userDestination;  
-	// Another member variable: Credentials object
+	Destination userDestination;
+	// Credential information is stored inside of credentials' package with their username. No need to make a new one here. 
 	
-	
-	public User(String firstName, String lastName, String city, String country) {
-		this.firstName = firstName;
-		this.lastName = lastName;
+	public User(String userName, String city, String country) {
+		this.userName = userName;
 		this.userLocation = new Location(city, country);
 		this.userDestination = null; // Initialize to null. 
 	}
@@ -19,8 +16,16 @@ public class User {
 		this.userDestination = passedDestination;
 	}
 	
+	public Destination getDestination() {
+		return this.userDestination;
+	}
+	
 	public String getUser() {
-		return (this.firstName + " " + this.lastName);
+		return (this.userName);
+	}
+	
+	public Location getLocation() {
+		return this.userLocation;
 	}
 	
 	// Add some modifyUser methods with different parameters. 

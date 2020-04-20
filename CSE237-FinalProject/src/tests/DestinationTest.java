@@ -20,8 +20,8 @@ class DestinationTest {
 
 	@Test
 	void testDestinationLists() {
-		User karen = new User("Karen", "Ye", "St. Louis", "USA");
-		User ruby = new User("Ruby", "Rain", "Paris", "France");
+		User karen = new User("Karen", "St. Louis", "USA");
+		User ruby = new User("Ruby", "Paris", "France");
 		
 		destination.addPeer(karen);
 		destination.addPeer(ruby);
