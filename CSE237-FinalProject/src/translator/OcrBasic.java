@@ -1,6 +1,6 @@
 package translator;
 
-import net.sourceforge.tess4j.*;
+import net.sourceforge.tess4j.*; 
 import java.io.File;
 
 
