@@ -59,7 +59,9 @@ Stories completed:
 
 Stories completed:
 
-**1. sth**
+**1. Create sign up, and log in**
+ - Created front page where users can create their accounts with preferred username and password.
+ - Alphanumerics are checked and password is encrypted using BCrypt.
 
 **2. sth**
 
@@ -69,3 +71,4 @@ Stories completed:
 
 
 **TODO Next iteration:**
+1. Users will be able to add and modify their location information in their account.
