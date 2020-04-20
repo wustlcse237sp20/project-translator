@@ -57,6 +57,9 @@ Stories completed:
 3. Interact with the UI in the terminal.
 4. Thank you for using!
 
+Also, if you get the following message from using the Translation API:
+****INFO: Failed to detect whether we are running on Google Compute Engine.****
+This is NOT an error on our end. This is just a default message spawned by the Translation API from the developers. If you see this, it is completely normal.
 
 
 Stories completed:
