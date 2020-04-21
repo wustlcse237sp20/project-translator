@@ -19,7 +19,7 @@
 	<classpathentry kind="lib" path="GoogleCloud/com/google/api-client/google-api-client/1.30.9/google-api-client-1.30.9.jar" sourcepath="/Users/karenye/.m2/repository/com/google/api-client/google-api-client/1.30.9/google-api-client-1.30.9-sources.jar"/>
 	<classpathentry kind="lib" path="GoogleCloud/com/google/apis/google-api-services-translate/v2-rev20170525-1.30.9/google-api-services-translate-v2-rev20170525-1.30.9.jar" sourcepath="/Users/karenye/.m2/repository/com/google/apis/google-api-services-translate/v2-rev20170525-1.30.9/google-api-services-translate-v2-rev20170525-1.30.9-sources.jar"/>
 	<classpathentry kind="lib" path="GoogleCloud/com/google/auth/google-auth-library-credentials/0.20.0/google-auth-library-credentials-0.20.0.jar"/>
-	<classpathentry kind="lib" path="GoogleCloud/com/google/auth/google-auth-library-oauth2-http/0.20.0/google-auth-library-oauth2-http-0.20.0.jar"/>
+	<classpathentry kind="lib" path="GoogleCloud/com/google/auth/google-auth-library-oauth2-http/0.20.0/google-auth-library-oauth2-http-0.20.0.jar" sourcepath="C:/Users/Daniel/.m2/repository/com/google/auth/google-auth-library-oauth2-http/0.20.0/google-auth-library-oauth2-http-0.20.0-sources.jar"/>
 	<classpathentry kind="lib" path="GoogleCloud/com/google/auto/value/auto-value-annotations/1.7/auto-value-annotations-1.7.jar"/>
 	<classpathentry kind="lib" path="GoogleCloud/com/google/cloud/google-cloud-core/1.93.3/google-cloud-core-1.93.3.jar" sourcepath="/Users/karenye/.m2/repository/com/google/cloud/google-cloud-core/1.93.3/google-cloud-core-1.93.3-sources.jar"/>
 	<classpathentry kind="lib" path="GoogleCloud/com/google/cloud/google-cloud-core-http/1.93.3/google-cloud-core-http-1.93.3.jar"/>
