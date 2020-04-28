@@ -9,16 +9,21 @@ public class Translator {
 
 	public static void getTranslatorScreen(Scanner mainScanner) throws IOException {
 		
-		System.out.println("Welcome to Translator!\n\nHow would you like to translate? Please select from the following:");
+		System.out.println("###########################################################");
+		System.out.println("#                 Welcome to Translator!                  #");
+		System.out.println("###########################################################\n");
+		
+		System.out.println("How would you like to translate? Please select from the following:");
 		System.out.println("1. Manually input statement");
-		System.out.println("2. By image"); 
+		System.out.println("2. By image");
+		System.out.println("\nTo go back, type 'back'");
+		
 		OCRTranslate OCRTranslate = new OCRTranslate();
 		
 		boolean validChoice = false;
 
 		while (!validChoice) {
 			String selection = mainScanner.nextLine();
-			System.out.println("You have chosen " + selection);
 			
 			if (selection.equals("1")) {
 				validChoice = true;
@@ -29,6 +34,9 @@ public class Translator {
 //				OCRTranslation(mainScanner);
 				System.out.println("Sorry, this option is not valid yet. Please try again.");
 
+			} else if (selection.equals("back")) {
+				validChoice = true;	
+				return;
 			} else { 
 				System.out.println("We did not understand your command");
 				System.out.println("Type '1', or '2'");	
@@ -72,7 +80,12 @@ public class Translator {
 
 		return res;
 	}
-
+	
+	/**
+     * Translates the user's input to the desired language
+     * 
+     * @param mainScanner to get the user input from command line
+     */
 	public static void inputTranslation(Scanner mainScanner) throws IOException {
 		InputTranslate inputTranslate = new InputTranslate();
 		
@@ -91,7 +104,7 @@ public class Translator {
 				String targetTexts = serializedInput.get(2);
 				
 				System.out.println(inputTranslate.translateInput(targetTexts, srcLanguage, destLanguage));
-				System.out.println("\nThank you for using Translator! We will take you back to the main screen now.");
+				System.out.println("\nThank you for using Translator! We will take you back to the main screen now.\n");
 			} else {
 				System.out.println("Please try again. Please type {Source language}, {Destination language}, {Texts of the source language}");	
 				System.out.println("I.E. {English} {Spanish} {Quarantine sucks.}");
