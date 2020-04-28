@@ -43,6 +43,12 @@ public class User {
 		return this.Destinations;
 	}
 	
+	public void seeDestinations() {
+		for(Destination destination : this.Destinations) {
+			System.out.println(destination.getLocation());
+		}
+	}
+	
 	// Add some modifyUser methods with different parameters. 
 	public void modifyUser() {		
 	}

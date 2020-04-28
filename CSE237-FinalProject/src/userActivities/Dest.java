@@ -142,4 +142,76 @@ public class Dest {
 			
 		}
 	}
+	
+	public static void seeLandmarkScreen(Scanner mainScanner, User currUser) throws IOException {
+		if(currUser.getDestinations().size() == 0) {
+			System.out.println("You don't have any saved destinations yet. You need to add one before you can see landmarks!\n");
+			return;
+		}
+		
+		System.out.println("For which of your destinations would you like to see your saved landmarks? (type '#')");
+		
+		ArrayList<Destination> destinationList = new ArrayList<>();
+		
+		int i = 1;
+		for(Destination destination : currUser.getDestinations()) {
+			System.out.println(i+". " + destination.getLocation());
+			destinationList.add(destination);
+			i++;
+		}
+		
+		boolean validCommand = false;
+		
+		while (!validCommand) {
+			String selection = mainScanner.nextLine();
+			int num = Integer.parseInt(selection);
+			
+			if(num > 0 && num <= destinationList.size()) {
+				validCommand = true;
+				
+				if(!destinationList.get(num-1).getLandmarks().isEmpty()) {
+					destinationList.get(num-1).seeAllLandmarks(currUser);
+				} else {
+					System.out.println("You don't have any landmarks added yet for this destination. Let's add some!");
+				}
+				return;
+				
+			} else {
+				System.out.println("Please input a valid option.");
+			}
+		}
+	}
+	
+	public static void seePeersScreen(Scanner mainScanner, User currUser) throws IOException {
+		if(currUser.getDestinations().size() == 0) {
+			System.out.println("You don't have any saved destinations yet. You need to add one before you can see peers!\n");
+			return;
+		}
+		
+		System.out.println("For which of your destinations would you like to see peers who also want to visit this place? (type '#')");
+		
+		ArrayList<Destination> destinationList = new ArrayList<>();
+		
+		int i = 1;
+		for(Destination destination : currUser.getDestinations()) {
+			System.out.println(i+". " + destination.getLocation());
+			destinationList.add(destination);
+			i++;
+		}
+		
+		boolean validCommand = false;
+		
+		while (!validCommand) {
+			String selection = mainScanner.nextLine();
+			int num = Integer.parseInt(selection);
+			
+			if(num > 0 && num <= destinationList.size()) {
+				validCommand = true;
+				destinationList.get(num-1).seeAllPeers();
+				return;
+			} else {
+				System.out.println("Please input a valid option.");
+			}
+		}
+	}
 }

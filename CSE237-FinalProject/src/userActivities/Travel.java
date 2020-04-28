@@ -74,6 +74,9 @@ public class Travel {
 		System.out.println("1. Translate (type '1') ");
 		System.out.println("2. Add destination (type '2') ");
 		System.out.println("3. Add landmark (type '3') ");
+		System.out.println("4. See destinations (type '4') ");
+		System.out.println("5. See landmarks (type '5') ");
+		System.out.println("6. See peers (type '6') ");
 		System.out.println("\nTo sign out, type 'sign out' ");
 		System.out.println("To quit, type 'quit'");
 		
@@ -95,7 +98,25 @@ public class Travel {
 				validChoice = true;
 				Dest.getLandmarkScreen(mainScanner, currUser);
 				dashboard(mainScanner, currUser);
+			} else if(selection.equals("4")) {
+				validChoice = true;
+				if(currUser.getDestinations().isEmpty()) {
+					System.out.println("You currently don't have any saved destinations. Let's add some!");
+				} else {
+					currUser.seeDestinations();
+				}
+				dashboard(mainScanner, currUser);
+			} else if(selection.equals("5")) {
+				validChoice = true;
+				Dest.seeLandmarkScreen(mainScanner, currUser);
+				dashboard(mainScanner, currUser);
+			} else if(selection.equals("6")) {
+				validChoice = true;
+				Dest.seePeersScreen(mainScanner, currUser);
+				dashboard(mainScanner, currUser);
 			}
+			
+			
 			
 			
 			
