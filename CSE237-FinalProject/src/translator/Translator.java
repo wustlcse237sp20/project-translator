@@ -45,40 +45,25 @@ public class Translator {
 	}
 	
 	
-	/*
-	 * This method will first check if the user's input is valid. 
-	 * 	However, the way to extract inputs from commandline is subject to change. 
-	 * 	So, I won't finish isValidInput() logic until everything is finalized. 
-	 */
+	/**
+     * Checks to see if both input and output languages are valid
+     * 
+     * @param inputText the input that the user provided
+     */
 	public static boolean isValidInput(String inputText) {
-		// If inputText == ""
-		// Else if Source language is not listed 
-		// Else if Destination language is not listed. 
-		// Else if Each section is not wrapped with brackets. 
-		return true;
+		String[] sp = inputText.split(" ");
+		String src = sp[0]; 
+		String dst = sp[1];
+		return LanguageMap.languageExists(src) && LanguageMap.languageExists(dst);
 	}
 	
-	/*
-	 * This method helps to serialize user's input into list of strings. 
-	 * [0] will be source language, [1] will be destination language, [2[ will be texts.  
-	 */	
-	public static List<String> getInputs(String inputText) {
-		List<String> res = new ArrayList<String>();
-		res.add("en");
-		res.add("es");
-		res.add("This sentence is used to test our program's functionality. Your inputs are not executed. Sorry");
-		return res; 
-	}
-	
-	/*
-	 * Google Translate API needs a language input like "en" for English.
-	 * Since Google Translate API needs a language input like "en", this method is needed to change "English" to "en". 
-	 * This method should be able to handle all languages we are trying to cover.
-	 */
-	public static String formattingLanguage(String targetLanguage) {
-		String res = "";
-
-		return res;
+	/**
+     * Gets the language abbreviation needed for Google API
+     * 
+     * @param targetLanguage the language that needs to be turned into its abbreviated form
+     */
+	public static String languageAbbr(String targetLanguage) {
+		return LanguageMap.getAbbr(targetLanguage);
 	}
 	
 	/**
@@ -98,12 +83,15 @@ public class Translator {
 			String selectionInputTranslate = mainScanner.nextLine();
 			if (isValidInput(selectionInputTranslate)) { // Then perform a translation job.
 				validInput = true;
-				List<String> serializedInput = getInputs(selectionInputTranslate);
-				String srcLanguage = serializedInput.get(0);
-				String destLanguage = serializedInput.get(1);
-				String targetTexts = serializedInput.get(2);
 				
-				System.out.println(inputTranslate.translateInput(targetTexts, srcLanguage, destLanguage));
+				String[] sp = selectionInputTranslate.split(" ");
+				String src = sp[0]; 
+				String dst = sp[1];
+				
+				String [] arr = selectionInputTranslate.split(" ", 2)[1].split(" ", 2);
+				String targetTexts = arr[1];
+				
+				System.out.println(inputTranslate.translateInput(targetTexts, languageAbbr(src), languageAbbr(dst)));
 				System.out.println("\nThank you for using Translator! We will take you back to the main screen now.\n");
 			} else {
 				System.out.println("Please try again. Please type {Source language}, {Destination language}, {Texts of the source language}");	

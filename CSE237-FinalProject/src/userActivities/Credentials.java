@@ -176,8 +176,6 @@ public class Credentials {
 								currUser = new User(username, userCity, userCountry);
 							}
 							
-							
-							
 							Travel.dashboard(mainScanner, currUser);
 						} else {
 							System.out.println("Incorrect Password");
