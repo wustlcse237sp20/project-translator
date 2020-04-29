@@ -208,6 +208,10 @@ public class Dest {
 			if(num > 0 && num <= destinationList.size()) {
 				validCommand = true;
 				destinationList.get(num-1).seeAllPeers();
+				
+				if(destinationList.get(num-1).getTotalNumberOfPeers() == 0) {
+					System.out.println("There are no peers who want to visit this place yet.");
+				}
 				return;
 			} else {
 				System.out.println("Please input a valid option.");
