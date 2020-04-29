@@ -34,6 +34,9 @@ public class Destination {
 	
 	public void removePeer(User user) {
 		this.travelPeers.remove(user);
+		if(landMarks.containsKey(user)) {
+			this.landMarks.remove(user);
+		}
 	}
 	
 	public int getTotalNumberOfPeers() {
@@ -47,12 +50,20 @@ public class Destination {
 	}
 	
 	
-	public void addLandmark(User user, String name) {
-		landMarks.get(user).add(new Landmark(name));
+	public void addLandmark(User user, Landmark landmark) {
+		if(!landMarks.containsKey(user)) {
+			landMarks.put(user, new HashSet<Landmark>());
+		} 
+		landMarks.get(user).add(landmark);
 	}
 	
-	public void removeLandmark(User user, String name) {
-		landMarks.get(user).remove(new Landmark(name));
+	public void removeLandmark(User user, Landmark landmark) {
+		for(Landmark lmk : landMarks.get(user)) {
+			if(lmk.equals(landmark)) {
+				landMarks.get(user).remove(lmk);
+				break;
+			}
+		}
 	}
 	
 	public int getTotalNumberOfLandmarks(User user) {

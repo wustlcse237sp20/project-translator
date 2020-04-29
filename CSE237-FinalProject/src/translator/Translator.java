@@ -7,101 +7,101 @@ import java.util.Scanner;
 
 public class Translator {
 
-	public static void main(String[] args) throws IOException {
-
-		System.out.println("Welcome to Translator!\n\nHow would you like to translate? Please select from the following:");
+	public static void getTranslatorScreen(Scanner mainScanner) throws IOException {
+		
+		System.out.println("###########################################################");
+		System.out.println("#                 Welcome to Translator!                  #");
+		System.out.println("###########################################################\n");
+		
+		System.out.println("How would you like to translate? Please select from the following:");
 		System.out.println("1. Manually input statement");
-		System.out.println("2. By file");
-		System.out.println("3. By image");
-		FileTranslate fileTranslate = new FileTranslate(); 
+		System.out.println("2. By image");
+		System.out.println("\nTo go back, type 'back'");
+		
 		OCRTranslate OCRTranslate = new OCRTranslate();
+		
+		boolean validChoice = false;
 
-		try(Scanner scanner = new Scanner(System.in)) {
-			String selection = scanner.nextLine();
-			System.out.println("You have chosen " + selection);
+		while (!validChoice) {
+			String selection = mainScanner.nextLine();
 			
 			if (selection.equals("1")) {
-				inputTranslation();
+				validChoice = true;
+				inputTranslation(mainScanner);
 				
 			} else if (selection.equals("2")) {
-				fileTranslation();
+//				validChoice = true;
+//				OCRTranslation(mainScanner);
+				System.out.println("Sorry, this option is not valid yet. Please try again.");
 
-			} else if (selection.equals("3")) {
-				OCRTranslation();
-		
+			} else if (selection.equals("back")) {
+				validChoice = true;	
+				return;
 			} else { 
-				// Do the selection again. Or terminate the program. 				
-			
+				System.out.println("We did not understand your command");
+				System.out.println("Type '1', or '2'");	
 			}
-			
 		}
-		System.out.println("Thank you for using Translator!");
 	}
 	
 	
-	/*
-	 * This method will first check if the user's input is valid. 
-	 * 	However, the way to extract inputs from commandline is subject to change. 
-	 * 	So, I won't finish isValidInput() logic until everything is finalized. 
-	 */
+	/**
+     * Checks to see if both input and output languages are valid
+     * 
+     * @param inputText the input that the user provided
+     */
 	public static boolean isValidInput(String inputText) {
-		// If inputText == ""
-		// Else if Source language is not listed 
-		// Else if Destination language is not listed. 
-		// Else if Each section is not wrapped with brackets. 
-		return true;
+		String[] sp = inputText.split(" ");
+		String src = sp[0]; 
+		String dst = sp[1];
+		return LanguageMap.languageExists(src) && LanguageMap.languageExists(dst);
 	}
 	
-	/*
-	 * This method helps to serialize user's input into list of strings. 
-	 * [0] will be source language, [1] will be destination language, [2[ will be texts.  
-	 */	
-	public static List<String> getInputs(String inputText) {
-		List<String> res = new ArrayList<String>();
-		res.add("en");
-		res.add("es");
-		res.add("This sentence is used to test our program's functionality. Your inputs are not executed. Sorry");
-		return res; 
+	/**
+     * Gets the language abbreviation needed for Google API
+     * 
+     * @param targetLanguage the language that needs to be turned into its abbreviated form
+     */
+	public static String languageAbbr(String targetLanguage) {
+		return LanguageMap.getAbbr(targetLanguage);
 	}
 	
-	/*
-	 * Google Translate API needs a language input like "en" for English.
-	 * Since Google Translate API needs a language input like "en", this method is needed to change "English" to "en". 
-	 * This method should be able to handle all languages we are trying to cover.
-	 */
-	public static String formattingLanguage(String targetLanguage) {
-		String res = "";
-
-		return res;
-	}
-
-	public static void inputTranslation() throws IOException {
+	/**
+     * Translates the user's input to the desired language
+     * 
+     * @param mainScanner to get the user input from command line
+     */
+	public static void inputTranslation(Scanner mainScanner) throws IOException {
 		InputTranslate inputTranslate = new InputTranslate();
+		
 		System.out.println("Please type {Source language}, {Destination language}, {Texts of the source language}");
 		System.out.println("I.E. {English} {Spanish} {Quarantine sucks.}");
-		String selectionInputTranslate = "";
-		try(Scanner scannerInputTranslate = new Scanner(System.in)) {
-			selectionInputTranslate = scannerInputTranslate.nextLine();
-		}
-		if (isValidInput(selectionInputTranslate)) { // Then perform a translation job. 
-			List<String> serializedInput = getInputs(selectionInputTranslate);
-			String srcLanguage = serializedInput.get(0);
-			String destLanguage = serializedInput.get(1);
-			String targetTexts = serializedInput.get(2);
-			System.out.println(inputTranslate.translateInput(targetTexts, srcLanguage, destLanguage));
-		} else {
-			// If no valid input is provided, then simply terminate the program or ask the user again. 
+		
+		boolean validInput = false;
+
+		while (!validInput) {
+			String selectionInputTranslate = mainScanner.nextLine();
+			if (isValidInput(selectionInputTranslate)) { // Then perform a translation job.
+				validInput = true;
+				
+				String[] sp = selectionInputTranslate.split(" ");
+				String src = sp[0]; 
+				String dst = sp[1];
+				
+				String [] arr = selectionInputTranslate.split(" ", 2)[1].split(" ", 2);
+				String targetTexts = arr[1];
+				
+				System.out.println(inputTranslate.translateInput(targetTexts, languageAbbr(src), languageAbbr(dst)));
+				System.out.println("\nThank you for using Translator! We will take you back to the main screen now.\n");
+			} else {
+				System.out.println("Please try again. Please type {Source language}, {Destination language}, {Texts of the source language}");	
+				System.out.println("I.E. {English} {Spanish} {Quarantine sucks.}");
+			}
 		}
 	}
-
 	
-	public static void fileTranslation() {
+	public static void OCRTranslation(Scanner mainScanner) {
 		
 	}
-	public static void OCRTranslation() {
-		
-	}
-
-	
 
 }
