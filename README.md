@@ -1,6 +1,12 @@
-# Translator - Travel App
+# Travel App
 
-Translator is a translation app utilizing the Google Cloud Tranlation API. You can translate either by direct input, file input, or image input. Please select the language you want to translate to and we'll do the work!
+Travel App is a travel simulation app where users can create accounts and add destinations they want to visit. They can add landmarks, or certain tourist attractions, to any destination as well as see other tourists, or peers, who also want to visit this destination. That way, a user can have a travel buddy. The Travel app also includes a built-in transltor so users can translate on the go when they are traveling!
+
+To run this project, clone from Github and navigate to the CSE237-FinalProject/ directory. Run:
+
+```
+./run.sh
+```
 
 ## Iteration 1
 
