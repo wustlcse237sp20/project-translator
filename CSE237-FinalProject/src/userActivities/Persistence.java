@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,8 +21,11 @@ public class Persistence {
      */
 	public static void restoreDestinations(User currUser) {	
 		BufferedReader reader;
-		try {
-			reader = new BufferedReader(new FileReader("src/credentials/" + currUser.getUser() + ".txt"));
+		try {			
+			String userDirectory = Paths.get("")
+		            .toAbsolutePath()
+		            .toString();					
+			reader = new BufferedReader(new FileReader(userDirectory+"/credentials/" + currUser.getUser() + ".txt"));
 			String line = reader.readLine();
 			
 			while (line != null) {
@@ -34,7 +38,7 @@ public class Persistence {
 					// iterate through all the other files to see if it exists?
 					
 					
-					File dir = new File("src/credentials");
+					File dir = new File(userDirectory+"/credentials/");
 					File[] directoryListing = dir.listFiles();
 					if (directoryListing != null) {
 					    for (File child : directoryListing) {
@@ -75,7 +79,11 @@ public class Persistence {
 	private static boolean existsInFile(String username, String searchItem) {
 		BufferedReader reader;
 		try {
-			reader = new BufferedReader(new FileReader("src/credentials/" + username + ".txt"));
+			
+			String userDirectory = Paths.get("")
+		            .toAbsolutePath()
+		            .toString();			
+			reader = new BufferedReader(new FileReader(userDirectory+"/credentials/" + username + ".txt"));
 			String line = reader.readLine();
 			
 			while (line != null) {
@@ -101,7 +109,11 @@ public class Persistence {
 	private static void restoreLandmarks(User currUser, Destination destination) {	
 		BufferedReader reader;
 		try {
-			reader = new BufferedReader(new FileReader("src/places/" + destination.getLocation() + ".txt"));
+			
+			String userDirectory = Paths.get("")
+		            .toAbsolutePath()
+		            .toString();			
+			reader = new BufferedReader(new FileReader(userDirectory+"/places/" + destination.getLocation() + ".txt"));
 			String line = reader.readLine();
 			
 			while (line != null) {
@@ -133,7 +145,11 @@ public class Persistence {
 		BufferedReader reader;
 		
 		try {
-			reader = new BufferedReader(new FileReader("src/credentials/" + peer + ".txt"));
+
+			String userDirectory = Paths.get("")
+		            .toAbsolutePath()
+		            .toString();			
+			reader = new BufferedReader(new FileReader(userDirectory+"/credentials/" + peer + ".txt"));
 			String line = reader.readLine();
 			
 			int counter = 1;
