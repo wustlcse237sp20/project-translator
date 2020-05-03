@@ -45,7 +45,7 @@ public class Credentials {
 				Travel.goBackToMainScreen(newUsername, mainScanner);
 				
 				if (pattern.matcher(newUsername).matches()) {
-				
+//					pathToFile =  "src/credentials/"+newUsername+".txt";
 					pathToFile =  userDirectory+"/credentials/"+newUsername+".txt";
 					File accountInfoFile = new File(pathToFile);
 					
@@ -141,7 +141,8 @@ public class Credentials {
 
 			String userDirectory = Paths.get("")
 		            .toAbsolutePath()
-		            .toString();			
+		            .toString();
+//			String pathToFile =  "src/credentials/"+username+".txt";	
 			String pathToFile =  userDirectory+"/credentials/"+username+".txt";	
 			File accountInfoFile = new File(pathToFile);
 			

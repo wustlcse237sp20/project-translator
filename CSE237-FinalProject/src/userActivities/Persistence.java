@@ -24,7 +24,8 @@ public class Persistence {
 		try {			
 			String userDirectory = Paths.get("")
 		            .toAbsolutePath()
-		            .toString();					
+		            .toString();
+//			reader = new BufferedReader(new FileReader("src/credentials/" + currUser.getUser() + ".txt"));
 			reader = new BufferedReader(new FileReader(userDirectory+"/credentials/" + currUser.getUser() + ".txt"));
 			String line = reader.readLine();
 			
@@ -34,10 +35,8 @@ public class Persistence {
 					String[] loc = line.split( "[\\s,]+" );
 					Destination oldDest = new Destination(loc[0], loc[1]);
 					restoreLandmarks(currUser, oldDest);
-					
-					// iterate through all the other files to see if it exists?
-					
-					
+			
+//					File dir = new File("src/credentials/");
 					File dir = new File(userDirectory+"/credentials/");
 					File[] directoryListing = dir.listFiles();
 					if (directoryListing != null) {
@@ -82,7 +81,8 @@ public class Persistence {
 			
 			String userDirectory = Paths.get("")
 		            .toAbsolutePath()
-		            .toString();			
+		            .toString();
+//			reader = new BufferedReader(new FileReader("src/credentials/" + username + ".txt"));
 			reader = new BufferedReader(new FileReader(userDirectory+"/credentials/" + username + ".txt"));
 			String line = reader.readLine();
 			
@@ -112,7 +112,8 @@ public class Persistence {
 			
 			String userDirectory = Paths.get("")
 		            .toAbsolutePath()
-		            .toString();			
+		            .toString();	
+//			reader = new BufferedReader(new FileReader("src/places/" + destination.getLocation() + ".txt"));
 			reader = new BufferedReader(new FileReader(userDirectory+"/places/" + destination.getLocation() + ".txt"));
 			String line = reader.readLine();
 			
@@ -148,7 +149,8 @@ public class Persistence {
 
 			String userDirectory = Paths.get("")
 		            .toAbsolutePath()
-		            .toString();			
+		            .toString();	
+//			reader = new BufferedReader(new FileReader("src/credentials/" + peer + ".txt"));
 			reader = new BufferedReader(new FileReader(userDirectory+"/credentials/" + peer + ".txt"));
 			String line = reader.readLine();
 			

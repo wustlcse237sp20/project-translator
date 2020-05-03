@@ -13,35 +13,8 @@ public class Translator {
 		System.out.println("#                 Welcome to Translator!                  #");
 		System.out.println("###########################################################\n");
 		
-		System.out.println("How would you like to translate? Please select from the following:");
-		System.out.println("1. Manually input statement");
-		System.out.println("2. By image");
-		System.out.println("\nTo go back, type 'back'");
-		
-		OCRTranslate OCRTranslate = new OCRTranslate();
-		
-		boolean validChoice = false;
-
-		while (!validChoice) {
-			String selection = mainScanner.nextLine();
-			
-			if (selection.equals("1")) {
-				validChoice = true;
-				inputTranslation(mainScanner);
-				
-			} else if (selection.equals("2")) {
-//				validChoice = true;
-//				OCRTranslation(mainScanner);
-				System.out.println("Sorry, this option is not valid yet. Please try again.");
-
-			} else if (selection.equals("back")) {
-				validChoice = true;	
-				return;
-			} else { 
-				System.out.println("We did not understand your command");
-				System.out.println("Type '1', or '2'");	
-			}
-		}
+		inputTranslation(mainScanner);
+		return;
 	}
 	
 	
@@ -52,8 +25,8 @@ public class Translator {
      */
 	public static boolean isValidInput(String inputText) {
 		String[] sp = inputText.split(" ");
-		String src = sp[0]; 
-		String dst = sp[1];
+		String src = sp[0].substring(0,1).toUpperCase() + sp[0].substring(1).toLowerCase();
+		String dst = sp[1].substring(0,1).toUpperCase() + sp[1].substring(1).toLowerCase();
 		return LanguageMap.languageExists(src) && LanguageMap.languageExists(dst);
 	}
 	
@@ -85,8 +58,8 @@ public class Translator {
 				validInput = true;
 				
 				String[] sp = selectionInputTranslate.split(" ");
-				String src = sp[0]; 
-				String dst = sp[1];
+				String src = sp[0].substring(0,1).toUpperCase() + sp[0].substring(1).toLowerCase();
+				String dst = sp[1].substring(0,1).toUpperCase() + sp[1].substring(1).toLowerCase();
 				
 				String [] arr = selectionInputTranslate.split(" ", 2)[1].split(" ", 2);
 				String targetTexts = arr[1];
@@ -99,9 +72,4 @@ public class Translator {
 			}
 		}
 	}
-	
-	public static void OCRTranslation(Scanner mainScanner) {
-		
-	}
-
 }

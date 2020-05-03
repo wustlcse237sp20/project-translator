@@ -13,6 +13,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+// Uncomment this if you want to try out translator
+//import translator.Translator;
+
 
 public class Travel {
 
@@ -70,7 +73,7 @@ public class Travel {
 		System.out.println("###########################################################\n");
 		
 		System.out.println("What would you like to do today? Please select from the following: ");
-		System.out.println("1. Translate (type '1') ");
+		System.out.println("1. Translate (type '1') -> this will only work in Eclipse because terminal doesn't have Google Cloud support. Follow instructions in README if you still want to try this out!");
 		System.out.println("2. Add destination (type '2') ");
 		System.out.println("3. Add landmark (type '3') ");
 		System.out.println("4. See destinations (type '4') ");
@@ -87,7 +90,7 @@ public class Travel {
 			
 			if (selection.equals("1")) {
 				validChoice = true;
-				// Translator.getTranslatorScreen(mainScanner); Translator is taken off since it does not compile. 
+//				Translator.getTranslatorScreen(mainScanner); // Translator is taken off since it does not compile in command line
 				dashboard(mainScanner, currUser);
 			} else if(selection.equals("2")) {
 				validChoice = true;
