@@ -98,6 +98,7 @@ Stories completed:
 ## Iteration 3
 
 Stories completed:
+
 **1. Update location information**
  - Users are now able to add their location information when creating an account.
 
