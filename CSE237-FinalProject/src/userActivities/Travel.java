@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Scanner;
 
 import destination.User;
-import translator.Translator;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -88,7 +87,7 @@ public class Travel {
 			
 			if (selection.equals("1")) {
 				validChoice = true;
-				Translator.getTranslatorScreen(mainScanner);
+				// Translator.getTranslatorScreen(mainScanner); Translator is taken off since it does not compile. 
 				dashboard(mainScanner, currUser);
 			} else if(selection.equals("2")) {
 				validChoice = true;

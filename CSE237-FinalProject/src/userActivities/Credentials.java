@@ -30,7 +30,10 @@ public class Credentials {
 		String pathToFile = "";
 		String userCity = "";
 		String userCountry = "";
-		
+	    
+		String userDirectory = Paths.get("")
+	            .toAbsolutePath()
+	            .toString();
 		Pattern pattern = Pattern.compile("^[a-zA-Z0-9]+$");
 			
 			while (!validUsername) {
@@ -43,7 +46,7 @@ public class Credentials {
 				
 				if (pattern.matcher(newUsername).matches()) {
 				
-					pathToFile = "src/credentials/"+newUsername+".txt";
+					pathToFile =  userDirectory+"/credentials/"+newUsername+".txt";
 					File accountInfoFile = new File(pathToFile);
 					
 					if (accountInfoFile.exists()) {
@@ -135,8 +138,11 @@ public class Credentials {
 			String username = mainScanner.nextLine();
 			
 			Travel.goBackToMainScreen(username, mainScanner);
-			
-			String pathToFile = "src/credentials/"+username+".txt";
+
+			String userDirectory = Paths.get("")
+		            .toAbsolutePath()
+		            .toString();			
+			String pathToFile =  userDirectory+"/credentials/"+username+".txt";	
 			File accountInfoFile = new File(pathToFile);
 			
 			if (!accountInfoFile.exists()) {
