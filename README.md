@@ -2,11 +2,14 @@
 
 Travel App is a travel simulation app where users can create accounts and add destinations they want to visit. They can add landmarks, or certain tourist attractions, to any destination as well as see other tourists, or peers, who also want to visit this destination. That way, a user can have a travel buddy. The Travel app also includes a built-in transltor so users can translate on the go when they are traveling!
 
-To run this project, clone from Github and navigate to the CSE237-FinalProject/ directory. Run:
+To run this project, clone from Github and navigate to the CSE237-FinalProject/ directory. Run the followng command:
 
 ```
 ./run.sh
 ```
+
+****INFO: Failed to detect whether we are running on Google Compute Engine.****
+If you run into this output, it is NOT an error on our end. This is just a default message spawned by the Translation API from the developers. If you see this, it is completely normal.
 
 ## Iteration 1
 
@@ -86,8 +89,26 @@ Stories completed:
 
 
 **TODO Next iteration:**
-1. Users will be able to add and modify their location information in their account.
+1. Users will be able to add their location information in their account.
 2. Users will be able to add a dream destination and landmarks they want to visit.
 3. Users will be able to see list of travel peers going to the same destination.
-4. Users will be able to freely add/remove to their list of dream destinations as well landmarks for each destination.
+4. Users will be able to freely add to their list of dream destinations as well landmarks for each destination.
 5. Information will be persisted across sessions.
+
+## Iteration 3
+
+Stories completed:
+**1. Update location information**
+ - Users are now able to add their location information when creating an account.
+
+**2. Add destinations**
+ - Users can now add destinations that they want to visit
+
+**3. Add landmarks**
+ - Users can now add landmarks for any of their destinations
+ 
+**4. See peers**
+ - Users can now see other tourists who also want to visit the same destinations they do
+
+**5. Persistence**
+ - All information is now persisted across any number of sessions
