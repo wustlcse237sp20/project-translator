@@ -61,5 +61,6 @@
 	<classpathentry kind="lib" path="Cloud/protobuf-java-3.11.4.jar"/>
 	<classpathentry kind="lib" path="Cloud/protobuf-java-util-3.11.4.jar"/>
 	<classpathentry kind="lib" path="Cloud/threetenbp-1.4.2.jar"/>
+	<classpathentry kind="lib" path="jsoup-1.13.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

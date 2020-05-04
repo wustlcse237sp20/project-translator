@@ -4,7 +4,6 @@
 # javac src/destination/*.java src/encryption/*.java src/userActivities/*.java
 
 cd src
-javac guis/MainInterface.java
 javac destination/Destination.java
 javac destination/Landmark.java
 javac destination/Location.java

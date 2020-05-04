@@ -24,7 +24,7 @@ public class Credentials {
 	 * User second commonPath if you are in eclipse. 
 	 */
 	
-	static String commonPath = userDirectory + "\\src\\credentials\\";  // For commond line. 
+	static String commonPath = userDirectory + "/credentials/";  // For command line. 
 	// static String commonPath = "src/credentials/"; 							// For eclipse. 
 
 	
@@ -149,8 +149,8 @@ public class Credentials {
 			
 			Travel.goBackToMainScreen(username, mainScanner);
 			
-			String pathToFile = commonPath +username+".txt";	
-			
+			String pathToFile = commonPath +username+".txt";
+			System.out.println(pathToFile);
 			File accountInfoFile = new File(pathToFile);
 			
 			if (!accountInfoFile.exists()) {
