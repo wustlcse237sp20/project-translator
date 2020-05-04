@@ -120,4 +120,6 @@ Stories completed:
 
 **5. Persistence**
  - All information is now persisted across any number of sessions
- 
+
+**6. Keywords**
+ - Using JSoup Library, we've implemented a feature that crawls the keywords of the tourism destination. Unfortunately, due to time constraints and difficulties of adding external jars in command line compile, it has not been integrated to the main program. To test this feature, access destination/Keyword.java and try it in the main method.
