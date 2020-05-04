@@ -24,7 +24,7 @@ public class Credentials {
 	 * User second commonPath if you are in eclipse. 
 	 */
 	
-	static String commonPath = userDirectory + "/credentials/";  // For commond line. 
+	static String commonPath = userDirectory + "\\src\\credentials\\";  // For commond line. 
 	// static String commonPath = "src/credentials/"; 							// For eclipse. 
 
 	
@@ -57,6 +57,7 @@ public class Credentials {
 				if (pattern.matcher(newUsername).matches()) {
 					pathToFile = commonPath + newUsername+".txt";
 					File accountInfoFile = new File(pathToFile);
+					System.out.println(pathToFile);
 					
 					if (accountInfoFile.exists()) {
 		
@@ -67,7 +68,7 @@ public class Credentials {
 							accountInfoFile.createNewFile();
 							validUsername = true;
 						} catch (IOException e) {
-							System.out.println("Error occured in craeting accountInfo file");
+							System.out.println("Error occured in creating accountInfo file");
 							e.printStackTrace();
 						}
 					}
@@ -149,6 +150,7 @@ public class Credentials {
 			Travel.goBackToMainScreen(username, mainScanner);
 			
 			String pathToFile = commonPath +username+".txt";	
+			
 			File accountInfoFile = new File(pathToFile);
 			
 			if (!accountInfoFile.exists()) {

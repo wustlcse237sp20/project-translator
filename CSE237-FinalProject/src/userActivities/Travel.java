@@ -20,18 +20,20 @@ import java.nio.file.Paths;
 public class Travel {
 
 	public static void main(String[] args) throws IOException {
-		
 		try(Scanner mainScanner = new Scanner(System.in)) {
 			startScreen(mainScanner);
 		}
+		
 	}
 	
 	
 	public static void startScreen(Scanner mainScanner) {
 		
+		
 		System.out.println("###########################################################");
 		System.out.println("#                 Welcome to Travel App!                  #");
 		System.out.println("###########################################################\n");
+		
 		
 		System.out.println("To login, type 'sign in'");
 		System.out.println("To sign up, type 'sign up'");
