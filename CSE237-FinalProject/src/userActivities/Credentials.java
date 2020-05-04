@@ -150,7 +150,6 @@ public class Credentials {
 			
 			String pathToFile = commonPath +username+".txt";	
 			File accountInfoFile = new File(pathToFile);
-			System.out.println(commonPath + " is common.");
 			
 			if (!accountInfoFile.exists()) {
 				System.out.println("Username does not exist");
