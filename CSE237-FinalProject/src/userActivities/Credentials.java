@@ -57,7 +57,6 @@ public class Credentials {
 				if (pattern.matcher(newUsername).matches()) {
 					pathToFile = commonPath + newUsername+".txt";
 					File accountInfoFile = new File(pathToFile);
-					System.out.println(pathToFile);
 					
 					if (accountInfoFile.exists()) {
 		
@@ -150,7 +149,6 @@ public class Credentials {
 			Travel.goBackToMainScreen(username, mainScanner);
 			
 			String pathToFile = commonPath +username+".txt";
-			System.out.println(pathToFile);
 			File accountInfoFile = new File(pathToFile);
 			
 			if (!accountInfoFile.exists()) {

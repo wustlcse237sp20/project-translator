@@ -225,6 +225,7 @@ public class Dest {
 		
 		ArrayList<Destination> destinationList = new ArrayList<>();
 		
+		
 		int i = 1;
 		for(Destination destination : currUser.getDestinations()) {
 			System.out.println(i+". " + destination.getLocation());
