@@ -3,6 +3,7 @@ package userActivities;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,12 +13,26 @@ import destination.User;
 
 public class Dest {
 	
+	static String userDirectory = Paths.get("")
+            .toAbsolutePath()
+            .toString();
+	
+	/*
+	 * Use first commonPath if you are on command line. 
+	 * User second commonPath if you are in eclipse. 
+	 */
+	
+	static String commonPath = userDirectory + "/";  					// For commond line. 
+	// static String commonPath = "src/"; 										// For eclipse. 
+	
+	
 	/**
      * Asks a user to input a destination they want to visit
      * 
      * @param mainScanner to get the user input from command line
      * @param currUser the current user logged in
      */
+	
 	public static void getDestinationScreen(Scanner mainScanner, User currUser) throws IOException {
 		System.out.println("Where would you like to visit? (type 'city, country')");
 		
@@ -40,14 +55,14 @@ public class Dest {
 
 					destination.addPeer(currUser);
 					
-					String pathToFile = "src/credentials/" + currUser.getUser() + ".txt";
+					String pathToFile =  commonPath + "credentials/" + currUser.getUser() + ".txt";
 					FileWriter myWriter = new FileWriter(pathToFile, true);
 					myWriter.write(destination.getLocation() + "\n");
 					myWriter.close();
 					
 					System.out.println("Destination added!\n");
 					
-					String newDestinationPath = "src/places/" + destination.getLocation() + ".txt";
+					String newDestinationPath = commonPath + "places/" + destination.getLocation() + ".txt";
 					File destinationInfoFile = new File(newDestinationPath);
 					
 					if (!destinationInfoFile.exists()) {
@@ -95,6 +110,10 @@ public class Dest {
 		
 		while (!validCommand) {
 			String selection = mainScanner.nextLine();
+			if (!isNumeric(selection)) {
+				System.out.println("Please type numeric value.");
+				continue; 
+			}
 			int result = Integer.parseInt(selection);
 			
 			if(result > 0 && result <= currUser.getDestinations().size()) {
@@ -121,13 +140,12 @@ public class Dest {
 		
 		while (!validCommand) {
 			String selection = mainScanner.nextLine();
-			
 			if(!selection.isEmpty()) {
 				validCommand = true;
 				Landmark landmark = new Landmark(selection);
 				destination.addLandmark(currUser, landmark);
 				
-				String pathToFile = "src/places/" + destination.getLocation() + ".txt";
+				String pathToFile = commonPath + "places/" + destination.getLocation() + ".txt";
 				FileWriter myWriter = new FileWriter(pathToFile, true);
 				myWriter.write(currUser.getUser() + "," + landmark.getName() + "\n");
 				myWriter.close();
@@ -162,8 +180,12 @@ public class Dest {
 		
 		boolean validCommand = false;
 		
-		while (!validCommand) {
+		while (!validCommand) {			
 			String selection = mainScanner.nextLine();
+			if (!isNumeric(selection)) {
+				System.out.println("Please type numeric value.");
+				continue; 
+			}
 			int num = Integer.parseInt(selection);
 			
 			if(num > 0 && num <= destinationList.size()) {
@@ -203,6 +225,10 @@ public class Dest {
 		
 		while (!validCommand) {
 			String selection = mainScanner.nextLine();
+			if (!isNumeric(selection)) {
+				System.out.println("Please type numeric value.");
+				continue; 
+			}
 			int num = Integer.parseInt(selection);
 			
 			if(num > 0 && num <= destinationList.size()) {
@@ -218,4 +244,14 @@ public class Dest {
 			}
 		}
 	}
+	
+	public static boolean isNumeric(String str) { 
+		  try {  
+		    Double.parseDouble(str);  
+		    return true;
+		  } catch(NumberFormatException e){  
+		    return false;  
+		  }  
+		}
+
 }

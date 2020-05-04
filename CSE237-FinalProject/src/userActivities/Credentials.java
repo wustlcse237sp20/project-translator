@@ -14,6 +14,19 @@ import destination.User;
 import encryption.BCrypt;
 
 public class Credentials {
+
+	static String userDirectory = Paths.get("")
+            .toAbsolutePath()
+            .toString();
+	
+	/*
+	 * Use first commonPath if you are on command line. 
+	 * User second commonPath if you are in eclipse. 
+	 */
+	
+	static String commonPath = userDirectory + "/credentials/";  // For commond line. 
+	// static String commonPath = "src/credentials/"; 							// For eclipse. 
+
 	
 	/**
      * Adds a new user info and writes it to file
@@ -31,9 +44,6 @@ public class Credentials {
 		String userCity = "";
 		String userCountry = "";
 	    
-		String userDirectory = Paths.get("")
-	            .toAbsolutePath()
-	            .toString();
 		Pattern pattern = Pattern.compile("^[a-zA-Z0-9]+$");
 			
 			while (!validUsername) {
@@ -45,8 +55,7 @@ public class Credentials {
 				Travel.goBackToMainScreen(newUsername, mainScanner);
 				
 				if (pattern.matcher(newUsername).matches()) {
-//					pathToFile =  "src/credentials/"+newUsername+".txt";
-					pathToFile =  userDirectory+"/credentials/"+newUsername+".txt";
+					pathToFile = commonPath + newUsername+".txt";
 					File accountInfoFile = new File(pathToFile);
 					
 					if (accountInfoFile.exists()) {
@@ -138,13 +147,10 @@ public class Credentials {
 			String username = mainScanner.nextLine();
 			
 			Travel.goBackToMainScreen(username, mainScanner);
-
-			String userDirectory = Paths.get("")
-		            .toAbsolutePath()
-		            .toString();
-//			String pathToFile =  "src/credentials/"+username+".txt";	
-			String pathToFile =  userDirectory+"/credentials/"+username+".txt";	
+			
+			String pathToFile = commonPath +username+".txt";	
 			File accountInfoFile = new File(pathToFile);
+			System.out.println(commonPath + " is common.");
 			
 			if (!accountInfoFile.exists()) {
 				System.out.println("Username does not exist");

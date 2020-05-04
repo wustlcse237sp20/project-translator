@@ -90,7 +90,7 @@ public class Travel {
 			
 			if (selection.equals("1")) {
 				validChoice = true;
-//				Translator.getTranslatorScreen(mainScanner); // Translator is taken off since it does not compile in command line
+//				Translator.getTranslatorScreen(mainScanner);  uncomment this to use translator. 
 				dashboard(mainScanner, currUser);
 			} else if(selection.equals("2")) {
 				validChoice = true;
@@ -117,11 +117,6 @@ public class Travel {
 				Dest.seePeersScreen(mainScanner, currUser);
 				dashboard(mainScanner, currUser);
 			}
-			
-			
-			
-			
-			
 			else if (selection.equals("sign out")) {
 				validChoice = true;
 				Credentials.signOut(mainScanner);

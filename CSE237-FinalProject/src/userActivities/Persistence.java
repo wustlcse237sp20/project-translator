@@ -14,6 +14,19 @@ import destination.User;
 
 public class Persistence {
 	
+	static String userDirectory = Paths.get("")
+            .toAbsolutePath()
+            .toString();
+	
+	/*
+	 * Use first commonPath if you are on command line. 
+	 * User second commonPath if you are in eclipse. 
+	 */
+	
+	static String commonPath = userDirectory + "/";  					// For commond line. 
+	// static String commonPath = "src/"; 										// For eclipse. 	
+	
+	
 	/**
      * Restores a user's destinations
      * 
@@ -25,8 +38,7 @@ public class Persistence {
 			String userDirectory = Paths.get("")
 		            .toAbsolutePath()
 		            .toString();
-//			reader = new BufferedReader(new FileReader("src/credentials/" + currUser.getUser() + ".txt"));
-			reader = new BufferedReader(new FileReader(userDirectory+"/credentials/" + currUser.getUser() + ".txt"));
+			reader = new BufferedReader(new FileReader(commonPath +"credentials/" + currUser.getUser() + ".txt"));
 			String line = reader.readLine();
 			
 			while (line != null) {
@@ -35,9 +47,8 @@ public class Persistence {
 					String[] loc = line.split( "[\\s,]+" );
 					Destination oldDest = new Destination(loc[0], loc[1]);
 					restoreLandmarks(currUser, oldDest);
-			
-//					File dir = new File("src/credentials/");
-					File dir = new File(userDirectory+"/credentials/");
+
+					File dir = new File(commonPath +"credentials/");
 					File[] directoryListing = dir.listFiles();
 					if (directoryListing != null) {
 					    for (File child : directoryListing) {
@@ -79,11 +90,7 @@ public class Persistence {
 		BufferedReader reader;
 		try {
 			
-			String userDirectory = Paths.get("")
-		            .toAbsolutePath()
-		            .toString();
-//			reader = new BufferedReader(new FileReader("src/credentials/" + username + ".txt"));
-			reader = new BufferedReader(new FileReader(userDirectory+"/credentials/" + username + ".txt"));
+			reader = new BufferedReader(new FileReader(commonPath +"credentials/" + username + ".txt"));
 			String line = reader.readLine();
 			
 			while (line != null) {
@@ -113,8 +120,7 @@ public class Persistence {
 			String userDirectory = Paths.get("")
 		            .toAbsolutePath()
 		            .toString();	
-//			reader = new BufferedReader(new FileReader("src/places/" + destination.getLocation() + ".txt"));
-			reader = new BufferedReader(new FileReader(userDirectory+"/places/" + destination.getLocation() + ".txt"));
+			reader = new BufferedReader(new FileReader(commonPath +"places/" + destination.getLocation() + ".txt"));
 			String line = reader.readLine();
 			
 			while (line != null) {
@@ -150,8 +156,7 @@ public class Persistence {
 			String userDirectory = Paths.get("")
 		            .toAbsolutePath()
 		            .toString();	
-//			reader = new BufferedReader(new FileReader("src/credentials/" + peer + ".txt"));
-			reader = new BufferedReader(new FileReader(userDirectory+"/credentials/" + peer + ".txt"));
+			reader = new BufferedReader(new FileReader(commonPath +"credentials/" + peer + ".txt"));
 			String line = reader.readLine();
 			
 			int counter = 1;
