@@ -25,7 +25,7 @@ public class Dest {
 	 */
 	
 	static String commonPath = userDirectory + "/";  					// For commond line. 
-	// static String commonPath = "src/"; 										// For eclipse. 
+//	 static String commonPath = "src/"; 										// For eclipse. 
 	
 	
 	/**

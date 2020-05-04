@@ -25,7 +25,7 @@ public class Credentials {
 	 */
 	
 	static String commonPath = userDirectory + "/credentials/";  // For command line. 
-	// static String commonPath = "src/credentials/"; 							// For eclipse. 
+//	 static String commonPath = "src/credentials/"; 							// For eclipse. 
 
 	
 	/**
