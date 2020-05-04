@@ -5,9 +5,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import destination.Destination;
+//import destination.Keyword; 		uncomment to test keyword features
 import destination.Landmark;
 import destination.User;
 
@@ -61,7 +63,16 @@ public class Dest {
 					myWriter.close();
 					
 					System.out.println("Destination added!\n");
+					/*
+					 * 
+					 * This feature of retrieving the keywords on the net has not been successfully integrated due to some difficulties adding external jar in command line.
+					System.out.println("Here are some keywords for your travel plans!");
 					
+					Keyword k = new Keyword(destination.getLocation(), 20);
+					List<String> listOfKeywords = k.getKeywords();
+					System.out.println(listOfKeywords.toString());
+					
+					*/
 					String newDestinationPath = commonPath + "places/" + destination.getLocation() + ".txt";
 					File destinationInfoFile = new File(newDestinationPath);
 					
